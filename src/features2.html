@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Fitur Belajar</title>
+  <link rel="icon" href="/Ikon SVG/myatech-logo.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/output.css">
+</head>
+
+<body class="font-[Poppins]">
+  <!-- Navbar -->
+  <section class="">
+    <div class="max-w-[1200px] mx-auto">
+      <nav class="flex justify-between items-center py-[20px] px-4">
+        <!-- Nama Brand -->
+        <div>
+          <img src="/Ikon SVG/Brand.svg" alt="">
+        </div>
+
+        <div class="flex">
+          <a href="index.html"
+            class="flex items-center bg-blue-600 px-6 py-3 rounded-[32px] text-white font-semibold hover:bg-black hover:scale-110 transition duration-300 gap-2">
+            <span>
+              <img src="/Ikon SVG/tangan-white.svg" alt="">
+            </span>
+            Beranda
+          </a>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Features 2 -->
+  <section id="problem-section" class="my-[200px]">
+    <div class="max-w-[1200px] mx-auto px-4 py-4">
+      <div class="grid grid-cols-12 items-center">
+        <!-- Kiri -->
+        <div class="col-span-12 md:col-span-5 lg:col-span-5 order-2">
+          <div class="">
+            <button class="flex gap-2 items-center px-8 py-3 bg-blue-500 text-white font-semibold rounded-full">
+              <span>
+                <img src="/Ikon SVG/college-white.svg" alt="">
+              </span>
+              Kurang Minat Belajar Siswa
+            </button>
+            <h1 class="mt-[25px] text-2xl md:text-3xl lg:text-3xl font-semibold text-black leading-tight">
+              Pernah merasa <span class="text-blue-600">capek belajar</span> <br>
+              tapi tetap memaksakan diri?
+            </h1>
+            <p class="mt-[25px] text-base text-justify lg:text-start text-grey opacity-50">
+              Banyak pelajar belajar berjam-jam tanpa hasil maksimal. Terlalu fokus mengejar tugas dan nilai, tetapi
+              lupa menjaga energi dan kesehatan mental.
+            </p>
+            <div class="mt-[25px] flex flex-col lg:flex-row gap-4">
+              <ul class="gap-4">
+                <li class="flex gap-4 font-semibold">
+                  <span>
+                    <img src="/Ikon SVG/files-blue.svg" alt="">
+                  </span>
+                  Terlalu Banyak Tugas
+                </li>
+                <li class="flex gap-4 font-semibold">
+                  <span>
+                    <img src="/Ikon SVG/chart-down-blue.svg" alt="">
+                  </span>
+                  Belajar Tapi Tidak Efektif
+                </li>
+                <li class="flex gap-4 font-semibold">
+                  <span>
+                    <img src="/Ikon SVG/brain-circuit-blue.svg" alt="">
+                  </span>
+                  Merasa Burnout tanpa sadar
+                </li>
+              </ul>
+            </div>
+            <div>
+              <button
+                class="mt-[20px] flex gap-2 items-center px-8 py-4 bg-blue-600 hover:bg-blue-500 cursor-pointer transition duration-300 text-white font-semibold rounded-[32px]">
+                <span>
+                  <img src="/Ikon SVG/grid.svg" alt="">
+                </span>
+                Lihat Fitur Belajar Kami
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanan -->
+        <div class="col-span-12 md:col-span-7 lg:col-span-7 order-1">
+          <div class="bg-white shadow-xl w-80 rounded-[32px] p-6">
+            <h1 class="text-3xl font-semibold text-blue-600 text-center">Study Balance</h1>
+            <input type="number" id="jamBelajar" placeholder="Masukkan Jam Belajar Hari Ini"
+              class="mt-[25px] w-full rounded-lg p-2 border-2 border-blue-600">
+
+            <div class="mt-[25px] w-full bg-gray-200 rounded-full h-3">
+              <div id="progressBar" class="rounded-full h-3"></div>
+            </div>
+
+            <button onclick="cekKeseimbangan()"
+              class="mt-[25px] bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg w-full">
+              Cek Keseimbangan
+            </button>
+            <p id="hasil" class="mt-[10px] text-black text-sm font-semibold text-center"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Js nya belum -->
+  <script>
+    function cekKeseimbangan() {
+      let jamBelajar = document.getElementById("jamBelajar").value;
+      let progressBar = document.getElementById("progressBar");
+      let hasil = document.getElementById("hasil");
+
+      if (jamBelajar < 2) {
+        progressBar.className = "bg-yellow-500 h-3 rounded-full";
+        hasil.innerText = "Kamu Kurang Fokus untuk Belajar";
+      } else if (jamBelajar <= 5) {
+        progressBar.className = "bg-green-500 h-3 rounded-full";
+        hasil.innerText = "Kamu Seimbang untuk Belajar"
+      } else {
+        progressBar.className = "bg-red-500 h-3 rounded-full";
+        hasil.innerText = "Terlalu Berlebihan hindari Burnout";
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar | Siang 18 February</title>
+  <link rel="icon" href="/Ikon SVG/myatech-logo.svg">
+  <link rel="stylesheet" href="./css/output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="font-[Poppins]">
+  <section>
+    <div class="mx-auto max-w-[1200px] px-4">
+      <nav class="flex justify-between py-6">
+        <div>
+          <img src="/Ikon SVG/Brand.svg" alt="">
+        </div>
+
+        <!-- Menu Navbar -->
+        <ul class="hidden lg:flex gap-[32px]">
+          <li><a href="">Beranda</a></li>
+          <li><a href="">Tentang Kami</a></li>
+          <li><a href="">Fitur</a></li>
+          <li><a href="">Mulai Belajar</a></li>
+        </ul>
+
+        <div class="hidden lg:block">
+          <a href=""
+            class="bg-black hover:bg-blue-600 transition duration-300 px-6 py-3 text-white font-semibold rounded-[32px]">Lihat
+            Demo</a>
+        </div>
+
+        <!-- Button Toogle -->
+        <div class="block lg:hidden buttonToogle">
+          <img src="/Ikon SVG/hamburger.svg" alt="">
+        </div>
+      </nav>
+
+      <div class="mobileMenu hidden">
+        <ul class="gap-[32px]">
+          <li class="px-3 py-3 hover:bg-blue-300 transition duration-300">
+            <a href="">
+              Beranda
+            </a>
+          </li>
+          <li class="px-3 py-3 hover:bg-blue-300 transition duration-300">
+            <a href="">
+              Tentang Kami
+            </a>
+          </li>
+          <li class="px-3 py-3 hover:bg-blue-300 transition duration-300">
+            <a href="">
+              Fitur
+            </a>
+          </li>
+          <li class="px-3 py-3 hover:bg-blue-300 transition duration-300">
+            <a href="">
+              Mulai Belajar
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const buttonToogle = document.querySelector('.buttonToogle');
+    const mobileMenu = document.querySelector('.mobileMenu');
+
+    buttonToogle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden');
+    })
+  </script>
+</body>
+
+</html>
